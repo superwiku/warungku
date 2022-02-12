@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_warungku_supplier,access.warungku.supplier,model_warungku_supplier,,1,1,1,1
+access_warungku_barang,access.warungku.barang,model_warungku_barang,,1,1,1,1
+access_warungku_penjualan_detail,access.warungku.penjualan_detail,model_warungku_penjualan_detail,,1,1,1,1
+access_warungku_barang_detail,access.warungku.barang_detail,model_warungku_barang_detail,,1,1,1,1

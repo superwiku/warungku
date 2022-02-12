@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- warungku.supplier tree view -->
+    <record id="warungku_supplier_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Supplier</field>
+        <field name="model">warungku.supplier</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="cp"/>
+                <field name="no_telp"/>
+                <field name="alamat"/>
+                <field name="barang_ids"/>
+                
+            </tree>
+        </field>
+    </record>
+
+    <!-- warungku.supplier form view -->
+    <record id="model_name_view_form" model="ir.ui.view">
+        <field name="name">Input Supplier</field>
+        <field name="model">warungku.supplier</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="alamat"/>                        
+                    </group>
+                    <group>
+                        <field name="cp"/>
+                        <field name="no_telp"/>
+                    </group>
+                    <group>
+                        <field name="barang_ids"/>                      
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- warungku.supplier action window -->
+    <record id="warungku_supplier_action" model="ir.actions.act_window">
+        <field name="name">Daftar Supplier</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">warungku.supplier</field>
+        <field name="view_mode">tree,form</field>        
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="warungku_supplier_menu_act" 
+              name="Daftar Supplier" 
+              parent="warungku_supply_menu_categ" 
+              action="warungku_supplier_action" 
+              sequence="10"/>
+
+</odoo>

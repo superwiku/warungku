@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- model.name tree view -->
+  <record id="warungku_barang_view_tree" model="ir.ui.view">
+      <field name="name">Daftar Barang</field>
+      <field name="model">warungku.barang</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="name"/>
+              <field name="harga"/>
+              <field name="harga_jual"/>
+              <field name="stok"/>
+              <field name="pemasok"/>
+              <field name="laba"/>
+          </tree>
+      </field>
+  </record>
+
+ <!-- warungku.barang form view -->
+ <record id="model_name_view_form" model="ir.ui.view">
+     <field name="name">Detail Barang</field>
+     <field name="model">warungku.barang</field>
+     <field name="arch" type="xml">
+         <form string="">
+             <sheet>
+                 <group>
+                    <field name="name"/>
+                    <field name="harga"/> 
+                    <field name="harga_jual"/>
+                    <field name="laba"/>
+                 </group>
+                 <group>
+                    <field name="stok"/>
+                    <field name="pemasok"/> 
+                 </group>
+             </sheet>
+         </form>
+     </field>
+ </record>
+
+    <!-- warungku.barang action window -->
+    <record id="warungku_barang_action" model="ir.actions.act_window">
+        <field name="name">Daftar Barang</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">warungku.barang</field>
+        <field name="view_mode">tree,form</field>        
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="warungku_barang_menu_act" 
+        name="Daftar Barang" 
+        parent="warungku_supply_menu_categ" 
+        action="warungku_barang_action" 
+        sequence="20"/>
+
+</odoo>
+
