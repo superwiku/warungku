@@ -13,6 +13,9 @@ class Penjualan_detail(models.Model):
         inverse_name='order_id', 
         string='Detail Barang')
     
+    potong = fields.Boolean(string='Potong Stok', default=False)
+    
+    
     total_penjualan = fields.Integer(
         compute='_compute_total_penjualan', 
         string='Total Penjualan')
@@ -28,7 +31,12 @@ class Barang_detail(models.Model):
     _description = 'Detail Barang'
 
     name = fields.Char(string='Kode Order')
-    barang_id = fields.Many2one(comodel_name='warungku.barang', string='List Barang')
+    
+    barang_id = fields.Many2one(
+        comodel_name='warungku.barang', 
+        string='List Barang',
+        domain=[('stok','>','20')])
+    
     order_id = fields.Many2one(comodel_name='warungku.penjualan_detail', string='Order')
     
     harga = fields.Integer(compute='_compute_harga', string='Harga')
@@ -44,5 +52,19 @@ class Barang_detail(models.Model):
     @api.depends('qty','harga')
     def _compute_jml_harga(self):
         for record in self:
-            record.jml_harga=record.qty*record.harga
+            record.jml_harga=record.qty*record.harga        
+   
+    @api.model
+    def create(self,vals):
+        record = super(Barang_detail, self).create(vals) 
+        if record.qty:
+            self.env['warungku.barang'].search([('id','=',record.barang_id.id)]).write({'stok':record.barang_id.stok-record.qty})
+            return record
+            
+          
+               
+   
+
+    
+                
     

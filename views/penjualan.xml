@@ -35,7 +35,7 @@
                                             <field name="barang_id"/>
                                             <field name="harga"/>
                                             <field name="qty"/>
-                                            <field name="jml_harga"/>
+                                            <field name="jml_harga" sum="Total"/>
                                         </tree>
                                     </field>
                                 </page>

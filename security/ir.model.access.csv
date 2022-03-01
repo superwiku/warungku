@@ -3,3 +3,5 @@ access_warungku_supplier,access.warungku.supplier,model_warungku_supplier,,1,1,1
 access_warungku_barang,access.warungku.barang,model_warungku_barang,,1,1,1,1
 access_warungku_penjualan_detail,access.warungku.penjualan_detail,model_warungku_penjualan_detail,,1,1,1,1
 access_warungku_barang_detail,access.warungku.barang_detail,model_warungku_barang_detail,,1,1,1,1
+access_warungku_partner,access.warungku.partner,model_warungku_partner,,1,1,1,1
+access_warungku_pegawai,access.warungku.pegawai,model_warungku_pegawai,,1,1,1,1
