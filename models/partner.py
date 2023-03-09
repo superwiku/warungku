@@ -14,4 +14,6 @@ class Pegawai(models.Model):
     _name = 'warungku.pegawai'
     
     jabatan = fields.Char(string='Jabatan')
+    jml_anak = fields.Integer(string='Jumlah Anak')
+    
     
