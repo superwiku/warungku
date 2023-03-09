@@ -6,6 +6,12 @@
         <field name="model">warungku.penjualan_detail</field>
         <field name="arch" type="xml">
             <tree>
+                <header>
+                    <button name="invoice" 
+                            string="Masuk Akunting" 
+                            type="object" 
+                            class="btn btn-warning"/>
+                </header
                 <!-- Add your fields here -->
                 <field name="name"/>
                 <field name="tanggal"/>

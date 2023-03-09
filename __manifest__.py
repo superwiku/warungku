@@ -31,6 +31,7 @@
         'views/supplier_views.xml',
         'views/barang_views.xml',
         'views/penjualan.xml',
+        'report/report.xml',
        
     ],
     # only loaded in demonstration mode

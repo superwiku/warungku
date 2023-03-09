@@ -26,6 +26,21 @@ class Penjualan_detail(models.Model):
             total=sum(self.env['warungku.barang_detail'].search([('order_id','=',record.id)]).mapped('jml_harga'))
             record.total_penjualan=total
             
+    def invoice(self):
+        invoices = self.env['account.move'].create({
+            'move_type': 'out_invoice',
+            'partner_id': self.name,
+            'invoice_date': self.tanggal,
+            'invoice_line_ids': [(0, 0, {
+                'product_id': 0,
+                'quantity': 1,
+                'price_unit': self.total_penjualan,
+                'price_subtotal': self.total_penjualan,
+            
+            })]
+        })       
+        return invoices
+            
 class Barang_detail(models.Model):
     _name = 'warungku.barang_detail'
     _description = 'Detail Barang'
